@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import { store } from "./Component/UserStore";
+import "./App.css";
+import UserContainer from "./Component/UserContainer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import UserDetails from "./Component/UserDetails";
+import NoMatchFound from "./Component/NoMatchFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="App">
+        <Routes>
+          <Route path="/" element={<UserContainer />}/>
+            <Route path="userdetails" element={<UserDetails />} />
+            <Route path="*" element= {<NoMatchFound />} />
+        </Routes>
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 }
 
