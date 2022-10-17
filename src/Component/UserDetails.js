@@ -21,7 +21,7 @@ const UserDetails = (props) => {
                     padding: "10px",
                   }}
                 >
-                  <img src={user.imageUrl} style={{ textAlign: "center" }} />
+                  <img src={user.imageUrl} alt="pic" style={{ textAlign: "center" }} />
                   <div style={{ textAlign: "left", padding: "10px" }}>
                     <div>ID:{user.id}</div>
                     <div>

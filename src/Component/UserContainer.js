@@ -8,6 +8,7 @@ import { fetchUsers, fetchSelectedId } from "./User/UserActionCreator";
 
 function UserContainer({ userData, fetchUsers, fetchSelectedId }) {
   let selectedIDs = [];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => fetchUsers(), []);
   const Navigate = useNavigate();
   return userData.loading ? (
